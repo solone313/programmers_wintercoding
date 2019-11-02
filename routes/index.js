@@ -1,9 +1,14 @@
 var express = require('express');
+var models = require('../models');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'programmers 과제 테스트 템플릿 - Node.js' });
+  models.course.findAll().then( result => {
+    res.render("index", {
+      courses: result
+    });
+  });
 });
 
 module.exports = router;

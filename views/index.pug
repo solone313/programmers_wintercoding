@@ -10,96 +10,16 @@ block content
         span
           i.material-icons.ic-search search
       ul.list-lecture
-        li.card-lecture
-          a.lecture-title(href='#') 웹 프로그래밍
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (월), (수)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000001
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 프로그래밍의 원리
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 13:00 - 10:50 | (월), (수)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000002
-            li 담당 교수 : 이지형
-            li 강의실 : 공학1관 102
-        li.card-lecture
-          a.lecture-title(href='#') 논리 설계
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 16:00 - 17:00 | (월)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000003
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 자료 구조
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (화), (목)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000004
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 알고리즘
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (화), (목)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000005
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 컴퓨터 네트워크
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (화)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000006
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 컴파일러
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (수)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000007
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 데이터베이스
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (목)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000008
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 데이터 통신
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (금)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000009
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
-        li.card-lecture
-          a.lecture-title(href='#') 운영체제
-          h6.lecture-time
-            i.material-icons.ic-lecture-info access_time
-            span 09:00 - 10:50 | (금)
-          ul.list-lecture-info
-            li 교과목 코드 : A0000010
-            li 담당 교수 : 김진수
-            li 강의실 : 공학관 204
+        -for(let post of courses)
+          li.card-lecture
+            a.lecture-title(href='#')=post.lecture 
+            h6.lecture-time
+              i.material-icons.ic-lecture-info access_time
+              span=post.start_time+' - '+post.end_time+ ' | '+ post.dayofweek
+            ul.list-lecture-info
+              li= '교과목 코드 : '+post.code
+              li= '담당 교수 : '+post.professor
+              li= '강의실 : '+post.location
     section.section-list
       .container-xl
         .table-schedule
