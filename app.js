@@ -27,9 +27,9 @@ models.sequelize.sync().then( () => {
       
       // create a new connection to the database
         const connection = mysql.createConnection({
-          host: 'mysql-server',
+          host: 'localhost',
           user: 'root',
-          password: 'password',
+          password: '000000',
           database: 'my_database'
         });
 
