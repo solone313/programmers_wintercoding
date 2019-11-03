@@ -68,26 +68,26 @@ block content
               li.timeline-vertical
                 .top-info.today
                   h4.day Mon
-                  ul.MON
+                ul.MON
 
               li#TUE.timeline-vertical
                 .top-info
                   h4.day Tue
-                  ul.TUE
+                ul.TUE
 
               li#WED.timeline-vertical
                 .top-info
                   h4.day Wed
-                  ul.WED
+                ul.WED
 
               li#THU.timeline-vertical
                 .top-info
                   h4.day Thu
-                  ul.THU
+                ul.THU
               li#FRI.timeline-vertical
                 .top-info
                   h4.day Fri
-                  ul.FRI
+                ul.FRI
   #modal-lecture-info.modal.fade(role='dialog', aria-hidden='true')
     .modal-dialog(role='document')
       .modal-content
@@ -127,16 +127,16 @@ block content
           ul.lecture-info
             li.lecture-time
               i.material-icons.ic-lecture-info access_alarm
-              span 강의 시간 : 09:00 - 10:50 | (월), (수)
+              span#time
             li.lecture-code
               i.material-icons.ic-lecture-info code
-              span 교과목 코드 : A0000001
+              span#code
             li.lecture-code
               i.material-icons.ic-lecture-info school
-              span 담당 교수 : 김진수
+              span#professor
             li.lecture-code
               i.material-icons.ic-lecture-info business
-              span 강의실 : 공학관 204
+              span#location
           .lecture-description
             p.txt-description
               | 본 강의에서는 JSP를 이용한 웹 기반 프로그래밍 기초 및 응용기술에 대해 학습합니다. 특히 실습 위주의 수업으로 프로그래밍 스킬 향상 및

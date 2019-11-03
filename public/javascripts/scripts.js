@@ -28,8 +28,33 @@ $('.list-lecture').click(function (e) {
     }
 });
 
-$('.lecture-time > a').click(function () {
-  $('#modal-lecture-task').modal('show');
+$('.lecture-time > a').click(function (e) {
+  console.log('눌렷다잉');
+  const tag = e.target.tagName;
+  const whitelist = ['LI','SPAN','H6','A']
+  if(!whitelist.includes(tag)) return;
+  else{
+    const code = $(e.target).closest('li.lecture-time').attr('data-code');
+    const url = `/courses/course/${code}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(res =>{
+      const course = res.course;
+      $('.modal-body > .lecture-title').text(course.lecture);
+      $('.lecture-title').attr('data-lecture', course.lecture)
+      $('#time').attr('data-startTime', course.start_time)
+      $('#time').attr('data-dayofweek', course.dayofweek)
+      $('#time').text(`강의 시간 : ${course.start_time}:00 - ${course.end_time}:00 | (${course.dayofweek})`);
+      
+      $('#code').attr('data-code', course.code);
+      $('#code').text(`교과목 코드 : ${course.code}`);
+      
+      $('#professor').attr('data-professor', course.professor);
+      $('#professor').text(`담당 교수 : ${course.professor}`);
+      $('#location').text(`강의실 : ${course.location}`);
+      $('#modal-lecture-task').modal('show');
+    });
+  }
 });
 
 $(function () {
@@ -114,7 +139,7 @@ $('.submit').click(function(){
       }
       if(dayofweek=='월'){
         $('.MON').append(`
-        <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+        <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01" data-code=${course_code}>
           <a href="#">
               <div class="lecture-info">
                   <h6 class="lecture-title">${lecture}</h6>

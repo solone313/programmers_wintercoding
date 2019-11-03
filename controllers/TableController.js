@@ -22,7 +22,7 @@ const createTable = function(req, res){
             models.Timetable.create(insertData) 
             .then(result => {
                 console.log('controller'+result.course_code);
-                res.send({ result: result });
+                res.send({ result: result,message:'등록되었습니다.'});
         })
     }
         else{
