@@ -10,15 +10,18 @@ $('.list-lecture').click(function (e) {
       .then(res =>{
         const course = res.course;
         $('.modal-body > .lecture-title').text(course.lecture);
-        
+        $('.lecture-title').attr('data-lecture', course.lecture)
         $('#time').attr('data-startTime', course.start_time)
+        $('#time').attr('data-endTime', course.end_time)
         $('#time').attr('data-dayofweek', course.dayofweek)
         $('#time').text(`강의 시간 : ${course.start_time}:00 - ${course.end_time}:00 | (${course.dayofweek})`);
         
         $('#code').attr('data-code', course.code);
         $('#code').text(`교과목 코드 : ${course.code}`);
         
+        $('#professor').attr('data-professor', course.professor);
         $('#professor').text(`담당 교수 : ${course.professor}`);
+        $('#location').attr('data-location', course.location);
         $('#location').text(`강의실 : ${course.location}`);
         $('#modal-lecture-info').modal('show');
       });
@@ -52,6 +55,7 @@ $('.form-control').on("propertychange change keyup paste input", function(){
   fetch(url)
   .then( res => res.json())
   .then( res => {
+    console.log("res:"+res);
     const searchData = res.searchData;
     $('.list-lecture *').remove()
     $.each(searchData, function(index, item){
@@ -75,7 +79,11 @@ $('.form-control').on("propertychange change keyup paste input", function(){
 $('.submit').click(function(){
   const course_code = $('#code').attr('data-code');
   const start_time = $('#time').attr('data-startTime');
-  const dayofweek =$('#time').attr('data-dayofweek')
+  const end_time = $('#time').attr('data-endTime');
+  const dayofweek =$('#time').attr('data-dayofweek');
+  const lecture =$('.lecture-title').attr('data-lecture');
+  const location =$('#location').attr('data-location');
+  const professor =$('#professor').attr('data-professor');
   const url = `/timetable`;
   fetch(url, {
     method: 'POST',
@@ -86,12 +94,152 @@ $('.submit').click(function(){
       { 
         code: course_code,
         course_start: start_time,
+        course_end: end_time,
+        lecture: lecture,
+        location: location,
+        professor: professor,
         course_day: dayofweek
       }
     )
   })
   .then(res=> res.json())
   .then(res => {
-    alert(res.message);
+    console.log('hi');
+    var result = res.result;
+    console.log(result);
+    if (dayofweek.length==1){
+      var con = '';
+      if(end_time-start_time==2){
+        con += 'two-hr'
+      }
+      if(dayofweek=='월'){
+        $('.MON').append(`
+        <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+          <a href="#">
+              <div class="lecture-info">
+                  <h6 class="lecture-title">${lecture}</h6>
+                  <h6 class="lecture-location">${location}</h6>
+              </div>
+              <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+          </a>
+        </li>`) 
+      }
+      if(dayofweek=='화'){
+        $('.TUE').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      if(dayofweek=='수'){
+        $('.WED').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      if(dayofweek=='목'){
+        $('.THU').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      if(dayofweek=='금'){
+        $('.FRI').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+    }
+    else{
+      for (var i = 0; i < 2; i++) {
+        var con = '';
+      if(end_time-start_time==2){
+        con += 'two-hr'
+      }
+      if(dayofweek[i]=='월'){
+        $('.MON').append(`
+        <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+          <a href="#">
+              <div class="lecture-info">
+                  <h6 class="lecture-title">${lecture}</h6>
+                  <h6 class="lecture-location">${location}</h6>
+              </div>
+              <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+          </a>
+        </li>`) 
+      }
+      if(dayofweek[i]=='화'){
+        $('.TUE').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      if(dayofweek[i]=='수'){
+        $('.WED').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      if(dayofweek[i]=='목'){
+        $('.THU').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      if(dayofweek[i]=='금'){
+        $('.FRI').append(`
+    <li class="lecture-time ${con} hr-${start_time}" data-event="lecture-01">
+    <a href="#">
+        <div class="lecture-info">
+            <h6 class="lecture-title">${lecture}</h6>
+            <h6 class="lecture-location">${location}</h6>
+        </div>
+        <div class="lecture-noti" data-toggle="tooltip" data-placement="top" title="" data-original-title="과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트"><i class="material-icons ic-lecture-noti">assignment</i><span class="lecture-noti-title">과제 제목 텍스트</span></div>
+    </a>
+    </li>`) 
+      }
+      }
+    }
   })
 });

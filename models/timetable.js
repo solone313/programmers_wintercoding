@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const myc = sequelize.define('myc', {
+  const timetable = sequelize.define('Timetable', {
     code: DataTypes.STRING,
     lecture: DataTypes.STRING,
     professor: DataTypes.STRING,
@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false
   });
-  myc.associate = function(models) {
+  timetable.associate = function(models) {
     // associations can be defined here
   };
-  return myc;
+  return timetable;
 };

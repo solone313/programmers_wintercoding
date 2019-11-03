@@ -68,18 +68,26 @@ block content
               li.timeline-vertical
                 .top-info.today
                   h4.day Mon
-              li.timeline-vertical
+                  ul.MON
+
+              li#TUE.timeline-vertical
                 .top-info
                   h4.day Tue
-              li.timeline-vertical
+                  ul.TUE
+
+              li#WED.timeline-vertical
                 .top-info
                   h4.day Wed
-              li.timeline-vertical
+                  ul.WED
+
+              li#THU.timeline-vertical
                 .top-info
                   h4.day Thu
-              li.timeline-vertical
+                  ul.THU
+              li#FRI.timeline-vertical
                 .top-info
                   h4.day Fri
+                  ul.FRI
   #modal-lecture-info.modal.fade(role='dialog', aria-hidden='true')
     .modal-dialog(role='document')
       .modal-content
@@ -107,7 +115,7 @@ block content
               | 실무 능력을 갖출 수 있도록 합니다.
         .modal-footer
           button.btn.btn-light(type='button', data-dismiss='modal') 취소
-          button.btn.btn-primary(type='button') 과목 등록하기
+          button.btn.btn-primary.submit(type='button') 과목 등록하기
   #modal-lecture-task.modal.fade(role='dialog', aria-hidden='true')
     .modal-dialog(role='document')
       .modal-content
