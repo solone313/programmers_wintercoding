@@ -2,6 +2,16 @@ const sequelize = require('sequelize')
 const models = require('../models')
 const Op = sequelize.Op;
 
+const getTable = function(req, res){
+    const tableId = req.params.tableId;
+    console.log(tableId);
+    models.Timetable.findOne({where: {code: tableId}})
+    .then( table => {
+        console.log(table);
+        res.send({ course: table})
+    })
+}
+
 const createTable = function(req, res){
     const body = req.body;
     console.log('body');
@@ -18,26 +28,50 @@ const createTable = function(req, res){
         dayofweek: body.course_day
     }
     try{
-        if(checkTable(insertData)){
-            models.Timetable.create(insertData) 
-            .then(result => {
-                console.log('controller'+result.course_code);
-                res.send({ result: result,message:'등록되었습니다.'});
+        models.Timetable.findAll({
+            where:{
+                [Op.or]:[
+                    {
+                        code: insertData.code
+                    },
+                ]
+            }
         })
-    }
-        else{
-            console.log('AAAAAAA')
-            res.send({ message: '이미 등록된 과목입니다' });
-        }
+        .then(result =>{
+            if(!result.length){
+                models.Timetable.create(insertData) 
+                .then(result => {
+                    console.log('controller'+result.course_code);
+                    res.send({ result: result,message:'등록되었습니다.'});
+            })
+            }
+            else{
+                console.log('AAAAAAA')
+                res.send({ message: '이미 등록된 과목입니다' });
+            }
+        })
+  
+        
     }catch(err){
         console.log(err)
     }
 }
 
-let checkTable = function(insertData){
-    return true;
+const deleteTable =function(req, res){
+    const id = req.params.tableId;
+    console.log(req.params);
+    console.log(id);
+    try{
+    models.Timetable.destroy({ where: { id: id }})
+    .then( result => res.send({message: '삭제되었습니다'}))
+    }
+    catch(err){
+        console.log(err);
+    }
 }
 
 module.exports = {
-    createTable
+    getTable,
+    createTable,
+    deleteTable
 }

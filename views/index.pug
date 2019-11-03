@@ -69,25 +69,944 @@ block content
                 .top-info.today
                   h4.day Mon
                 ul.MON
-
+                  -for(let post of timetable)
+                    -if(post.dayofweek[0]=='월'||post.dayofweek[1]=='월')
+                      -if(post.end_time-post.start_time==1)
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                      -else
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='two-hr hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='two-hr hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='two-hr hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='two-hr hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='two-hr hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='two-hr hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='two-hr hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='two-hr hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='two-hr hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트               
               li#TUE.timeline-vertical
                 .top-info
                   h4.day Tue
                 ul.TUE
+                  -for(let post of timetable)
+                    -if(post.dayofweek[0]=='화'||post.dayofweek[1]=='화')
+                      -if(post.end_time-post.start_time==1)
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                      -else
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='two-hr hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='two-hr hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='two-hr hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='two-hr hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='two-hr hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='two-hr hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='two-hr hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='two-hr hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='two-hr hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
 
               li#WED.timeline-vertical
                 .top-info
                   h4.day Wed
                 ul.WED
+                  -for(let post of timetable)
+                    -if(post.dayofweek[0]=='수'||post.dayofweek[1]=='수')
+                      -if(post.end_time-post.start_time==1)
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                      -else
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='two-hr hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='two-hr hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='two-hr hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='two-hr hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='two-hr hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='two-hr hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='two-hr hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='two-hr hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='two-hr hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
 
               li#THU.timeline-vertical
                 .top-info
                   h4.day Thu
                 ul.THU
+                  -for(let post of timetable)
+                    -if(post.dayofweek[0]=='목'||post.dayofweek[1]=='목')
+                      -if(post.end_time-post.start_time==1)
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                      -else
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='two-hr hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='two-hr hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='two-hr hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='two-hr hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='two-hr hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='two-hr hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='two-hr hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='two-hr hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='two-hr hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
               li#FRI.timeline-vertical
                 .top-info
                   h4.day Fri
                 ul.FRI
+                  -for(let post of timetable)
+                    -if(post.dayofweek[0]=='금'||post.dayofweek[1]=='금')
+                      -if(post.end_time-post.start_time==1)
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                      -else
+                        -if(post.start_time=='9')
+                          li.lecture-time(class='two-hr hr-9', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='10')
+                          li.lecture-time(class='two-hr hr-10', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='11')
+                          li.lecture-time(class='two-hr hr-11', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='12')
+                          li.lecture-time(class='two-hr hr-12', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='13')
+                          li.lecture-time(class='two-hr hr-13', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='14')
+                          li.lecture-time(class='two-hr hr-14', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트
+                        -if(post.start_time=='15')
+                          li.lecture-time(class='two-hr hr-15', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
+                        -if(post.start_time=='16')
+                          li.lecture-time(class='two-hr hr-16', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트  
+                        -if(post.start_time=='17')
+                          li.lecture-time(class='two-hr hr-17', data-event='lecture-01',data-code=post.code)
+                            a(href='#')
+                              .lecture-info
+                                h6.lecture-title=post.lecture
+                                h6.lecture-location=post.location
+                                h6=post.start_time
+                              .lecture-noti(data-toggle='tooltip', data-placement='top', title='', data-original-title='과제 설명 텍스트 과제 설명 텍스트 과제 설명 텍스트')
+                                i.material-icons.ic-lecture-noti assignment
+                                span.lecture-noti-title 과제 제목 텍스트     
   #modal-lecture-info.modal.fade(role='dialog', aria-hidden='true')
     .modal-dialog(role='document')
       .modal-content
@@ -123,20 +1042,20 @@ block content
           button.close(type='button', data-dismiss='modal', aria-label='Close')
             span(aria-hidden='true') ×
         .modal-body
-          h3.lecture-title 웹 프로그래밍
+          h3.lecture-title
           ul.lecture-info
             li.lecture-time
               i.material-icons.ic-lecture-info access_alarm
-              span#time
+              span#lecture-time 
             li.lecture-code
               i.material-icons.ic-lecture-info code
-              span#code
+              span#lecture-code 
             li.lecture-code
               i.material-icons.ic-lecture-info school
-              span#professor
+              span#lecture-professor
             li.lecture-code
               i.material-icons.ic-lecture-info business
-              span#location
+              span#lecture-location
           .lecture-description
             p.txt-description
               | 본 강의에서는 JSP를 이용한 웹 기반 프로그래밍 기초 및 응용기술에 대해 학습합니다. 특히 실습 위주의 수업으로 프로그래밍 스킬 향상 및
@@ -157,7 +1076,7 @@ block content
               | 메모 등록
           .right
             button.btn.btn-light(type='button', data-dismiss='modal') 확인
-            button.btn.btn-danger(type='button') 과목 삭제하기
+            button.btn.btn-danger.delete-lecture(type='button') 과목 삭제하기
   #PopoverContent(style='display: none;')
     h5.schedule-title 메모 등록하기
     .form-group

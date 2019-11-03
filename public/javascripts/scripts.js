@@ -29,32 +29,27 @@ $('.list-lecture').click(function (e) {
 });
 
 $('.lecture-time > a').click(function (e) {
-  console.log('눌렷다잉');
-  const tag = e.target.tagName;
-  const whitelist = ['LI','SPAN','H6','A']
-  if(!whitelist.includes(tag)) return;
-  else{
-    const code = $(e.target).closest('li.lecture-time').attr('data-code');
-    const url = `/courses/course/${code}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(res =>{
-      const course = res.course;
-      $('.modal-body > .lecture-title').text(course.lecture);
-      $('.lecture-title').attr('data-lecture', course.lecture)
-      $('#time').attr('data-startTime', course.start_time)
-      $('#time').attr('data-dayofweek', course.dayofweek)
-      $('#time').text(`강의 시간 : ${course.start_time}:00 - ${course.end_time}:00 | (${course.dayofweek})`);
+  const table_id = $(e.target).closest('li.lecture-time').attr('data-code');
+  const url = `/timetable/${table_id}`
+  fetch(url)
+  .then(res => res.json())
+  .then(res => {
+    const course = res.course;
+    console.log(course);
+    $('.modal-body > .lecture-title').text(course.lecture);
+    $('#lecture-time').text(`강의 시간 : ${course.start_time}:00 - ${course.end_time}:00 | (${course.dayofweek})`);
       
-      $('#code').attr('data-code', course.code);
-      $('#code').text(`교과목 코드 : ${course.code}`);
+    $('#lecture-code').attr('data-lecture', course.id);
+    $('#lecture-code').text(`교과목 코드 : ${course.code}`);
       
-      $('#professor').attr('data-professor', course.professor);
-      $('#professor').text(`담당 교수 : ${course.professor}`);
-      $('#location').text(`강의실 : ${course.location}`);
-      $('#modal-lecture-task').modal('show');
-    });
-  }
+    $('#lecture-professor').text(`담당 교수 : ${course.professor}`);
+    $('#lecture-location').text(`강의실 : ${course.location}`);
+
+    
+    
+
+    $('#modal-lecture-task').modal('show');
+  })
 });
 
 $(function () {
@@ -72,6 +67,17 @@ $(function () {
     }
   });
 });
+$('.delete-lecture').click(function(e){
+  const tableId = $('#lecture-code').attr('data-lecture')
+  console.log(tableId+'요고야');
+  const url = `/timetable/${tableId}`;
+  fetch(url, { method: 'DELETE' })
+  .then(res => res.json())
+  .then(res => {
+    alert(res.message);
+    window.location.reload()
+  })
+})
 
 
 $('.form-control').on("propertychange change keyup paste input", function(){
@@ -132,6 +138,7 @@ $('.submit').click(function(){
     console.log('hi');
     var result = res.result;
     console.log(result);
+    if(result){
     if (dayofweek.length==1){
       var con = '';
       if(end_time-start_time==2){
@@ -266,5 +273,9 @@ $('.submit').click(function(){
       }
       }
     }
+  }
+    alert(res.message);
+    window.location.reload();
+    $('#modal-lecture-info').modal('hide');
   })
 });

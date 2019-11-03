@@ -10,8 +10,11 @@ router.use('/timetable', timetables)
 
 router.get('/', function(req, res, next) {
   models.course.findAll().then( result => {
-    res.render("index", {
-      courses: result
+    models.Timetable.findAll().then( timetable => {
+      res.render("index", {
+        courses: result,
+        timetable: timetable
+      });
     });
   });
 });
